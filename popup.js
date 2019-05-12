@@ -1,17 +1,26 @@
-document.getElementById("dark").addEventListener("click", function(){changeTheme(0)});
-document.getElementById("green").addEventListener("click", function(){changeTheme(1)});
+document.getElementById("dark").addEventListener("click", function(){changeTheme('dark')});
+document.getElementById("green").addEventListener("click", function(){changeTheme('green')});
 
-function changeTheme(x){
-    if (x == 0) {
-        var bgcolor = '#000';
-        var color = '#fff';
-    } else {
-        var bgcolor = '#6ca580';
-        var color = '#000';
-    }
-    document.body.style.backgroundColor = bgcolor;
-    document.body.style.color = color;
-    document.body.style.outline = color;
-    //console.log(bgcolor);
-    return;
+function changeTheme(theme) {
+    var theme = theme;
+
+    chrome.tabs.query({currentWindow: true, active: true}, function (tabs){
+        var activeTab = tabs[0];
+        if (theme=='dark') {
+            var bgColor = '#000';
+            var fontColor = '#fff';
+        }
+        if (theme=='green') {
+            var bgColor = '#6ca580';
+            var fontColor = '#000';
+        }
+
+        let message = {
+            bgColor: bgColor,
+            fontColor: fontColor
+        }
+        chrome.tabs.sendMessage(activeTab.id, message);
+        console.log(activeTab, message, "success");
+    });
+ 
 }
