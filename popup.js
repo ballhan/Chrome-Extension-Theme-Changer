@@ -20,7 +20,7 @@ function changeTheme(theme) {
             fontColor: fontColor
         }
         chrome.tabs.sendMessage(activeTab.id, message);
-        console.log(activeTab, message, "success");
+        //console.log(activeTab, message, "success");
     });
  
 }
