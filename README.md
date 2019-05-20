@@ -1,8 +1,8 @@
-# Chrome-Extension-Theme-changer version 1.0.0
+# Theme-changer version 1.0.0
 
 This is a chrome extension that allow user to change the background of websites 
 
-<img src="demo/demo1.png" height="200">
+<img src="demo/demo1.png" height="100">
 <br/>
 <br/>
 Dark mode
