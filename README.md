@@ -1,4 +1,4 @@
-# Theme-changer version 1.0.0
+# themeChangerChromeExtension version 1.0.0
 
 This is a chrome extension that allow user to change the background of websites 
 
